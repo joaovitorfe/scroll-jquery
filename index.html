@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Scroll  con mouse</title>
+</head>
+<body>
+    
+    <div id="holder">
+        <ul id="scroll">
+            <li> <a href=""> Navirai  </a> </li>
+            <li> <a href=""> ponta pora  </a> </li>
+            <li> <a href=""> dourados  </a> </li>
+            <li> <a href=""> sete quedas  </a> </li>
+            <li> <a href=""> São paulo</a> </li>
+            <li> <a href=""> Curitiba</a> </li>
+            <li> <a href=""> corumbá  </a> </li>
+            <li> <a href=""> Chapeco </a> </li>
+            <li> <a href=""> rio de janeiro  </a> </li>
+            <li> <a href=""> santos </a> </li>
+            <li> <a href="">  bahia </a> </li>
+            <li> <a href="">   espirito santo</a> </li>
+            <li> <a href="">  maringá </a> </li>
+            <li> <a href=""> rio grande do sul </a> </li>
+            <li> <a href="">  minas gerais</a> </li>
+            <li> <a href="">  campo grande</a> </li>
+            <li> <a href=""> fortaleza </a> </li>
+            <li> <a href=""> itaquirai</a> </li>
+            <li> <a href=""> juti </a> </li>
+            <li> <a href=""> Santa Cruz </a> </li>
+            <li> <a href="">  iguatemi</a> </li>
+            <li> <a href=""> Rio Negro </a> </li>
+            <li> <a href="">  maracaju</a> </li>
+        </ul>
+
+    </div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
+<script>
+    $("#holder").mousemove(function(e){
+        pageTop = 132;
+        holderHeight = $("#holder").height();
+        scrollHeight = $("#scroll").height();
+
+        scrollTop = (e.pageY - pageTop) * (100/holderHeight);
+        scrollTopR = Math.round(scrollTop);
+        scrollProcent = Math.round((scrollTop / 100) * scrollHeight * (370 / scrollHeight));
+
+
+
+        $("#scroll").css({"margin-top" : -scrollProcent + "px" });
+        console.log("margin-top: - "+scrollTopR + "px");
+        console.log("scrollHeight: - "+ scrollHeight);
+        console.log("scrollProcent: - "+ scrollProcent);
+        console.log("");
+    })
+
+</script>
+</body>
+</html>
